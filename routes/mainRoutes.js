@@ -2,7 +2,7 @@ const express =require('express');
 const bodyParser = require('body-parser')
 const router = express.Router();
 const mainController = require('../controllers/mainController');
-const mongoose = require('mongoose');
+// const mongoose = require('mongoose');
 const User = require('../models/user')
 
 router.get('/',mainController.getindex)
@@ -63,12 +63,13 @@ router.post('/update',((req,res,next)=>{
     })
 }))
 
-mongoose.connect('mongodb://localhost/mongodb',(error)=>{
-    if(error){
-        console.log(error)
-    }{
-        console.log('DB is running')
-    }
-})
+// mongoose.connect('mongodb://localhost/mongodb',(error)=>{
+//     if(error){
+//         console.log(error)
+//     }{
+//         console.log('DB is running')
+//     }
+// })
+
 
 module.exports = router;
